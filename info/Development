@@ -16,3 +16,7 @@ Development Phases
 1.1. Conexion con MySQL
 	inc/conn.php
 1.2. Conexion con mySQL - POO
+	Initial Index.php
+--------------------------- 2. Login  --------------------------------------
+2.1 Create Front End of Login
+	index.php
