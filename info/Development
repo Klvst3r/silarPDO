@@ -45,3 +45,7 @@ Development Phases
 	controller/HistoryController.php	
 3.2.7. Define DAO if History 
 	data/HistoryDAO.php
+3.2.8. Define History Model
+	model/History.php
+3.2.9. Call in validCode the register of Access History
+	inc/validaCode.php
