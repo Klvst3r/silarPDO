@@ -53,3 +53,11 @@ Development Phases
 	controler/UserController.php
 3.2.11. Define method to obtain data from a query in access user method getUser
 	data/UserDAO.php
+3.2.10. Define updateHistory method on the controller
+	inc/ValidCode.php	
+3.2.11. Define changeIn method in User Controller
+	controller/UserController
+3.2.12. Define shangeIn method in User DAO
+	data/UserDAO.php
+
+	

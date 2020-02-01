@@ -104,9 +104,31 @@ class UserDAO extends Connect {
 		//Return values to user object
 		return $user;
 
-
-
 	}//getUser method
+
+	public static function changeIn($user){
+
+		$idUser = $user->getId_user();
+
+		$updateIn = "UPDATE `users` SET `online` = '1' WHERE `users`.`id_user` = '$idUser'";
+
+		self::getConnection();
+
+		$result = self::$cnx->prepare($updateIn);
+
+		//$idUser = $user->getId_user();
+		//$result->bindParam(":id_user", $idUser);
+
+		if($result->execute()){
+			
+			self::disconnect();
+			
+			return true;
+		}else{
+			return false;
+		}
+
+	}//Metodo ChangeIn	
 
 
 
