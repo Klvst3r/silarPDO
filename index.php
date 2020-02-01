@@ -3,6 +3,7 @@
   <head>
  <?php session_start(); 
 
+ include 'inc/Disconnect.php';
 /*include './inc/Connect.php';
 $dConnect = new Connect;
 
@@ -49,7 +50,7 @@ $cdb = $dConnect->dbConnectSimple();*/
     toma el valor de valso, indicando que no sea enviado ningun valor desde el login desde index.php
      */
     $code = $_POST["code"]="false";
-    //Disconnect::disconn();
+    Disconnect::disconn();
     session_destroy();
     session_unset();
     ?>

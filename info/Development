@@ -39,3 +39,6 @@ Development Phases
 	inc/validaCode.php	
 3.2.4. Create helper to validate fields of forms
 	help/helper.php
+3.2.5. Create Disconection of BD for the login
+	inc/Disconnect.php
+	
