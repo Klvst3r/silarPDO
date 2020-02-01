@@ -5,23 +5,24 @@ include '../inc/Connect.php';
 include '../model/User.php';
 
 
-//Establecer conexion con la BD
+//Conection with la BD
 class UserDAO extends Connect {
-	//Definimos la variable de conexion
+	//var connection
 	protected static $cnx;
 
-	//Definir la conexion a la BD
+	//define connection to the DB
 	private static function getConnection(){
 		self::$cnx = Connect::dbConnectSimple();
 
 	}
 
-	//Definir la desconexion a la BD
+	//Define desconnection to DB
 	private static function disconnect(){
 		self::$cnx = NULL;	
 		
 	}
 
+	//Check if exist user who make login
 	public static function login($user){
 
 		$query = "SELECT id_user, id_priv, name, user_name, user_pass, user_email, id_status_user, user_position, online FROM users WHERE user_name = :user_name AND user_pass = :user_pass";
@@ -53,7 +54,7 @@ class UserDAO extends Connect {
 				return $login;
 				
 				
-				//cerramos la conexion activa con la BD
+				//close active connection with DB
 				self::disconnect();
 			}
 			return true;
@@ -62,5 +63,51 @@ class UserDAO extends Connect {
 		return false;
 		
 	}//Login Method
+
+	public static function logout(){
+		self::disconnect();
+	}//logout method
+
+	public static function getUser($user){
+
+		$query = "SELECT id_user, id_priv, name, user_name, user_pass, user_email FROM users WHERE
+		user_name = :user_name and user_pass = :user_pass";
+
+		self::getConnection();
+
+		$result = self::$cnx->prepare($query);
+
+		$user_bd = $user->getUser_name();
+		$result->bindParam(":user_name", $user_bd);
+
+		$pass_bd = $user->getUser_pass();
+		$result->bindParam(":user_pass", $pass_bd);
+
+		$result->execute();
+
+		$data = $result->fetch();
+       
+
+		$user = new User();
+		//To send the information to validate and visualize user authentication data
+		//carry from the object of the user trought its object instance of the usuers entity
+		$user->setId_user($data["id_user"]);
+		$user->setId_priv($data["id_priv"]);
+		$user->setName($data["name"]);
+		$user->setUser_name($data["user_name"]);
+		$user->setUser_pass($data["user_pass"]);
+		$user->setUser_email($data["user_email"]);
+
+		
+		self::disconnect();
+
+		//Return values to user object
+		return $user;
+
+
+
+	}//getUser method
+
+
 
 }//Class UserDAO

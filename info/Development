@@ -51,3 +51,5 @@ Development Phases
 	inc/validaCode.php
 3.2.10. Define controlle to obtain data of last in the login
 	controler/UserController.php
+3.2.11. Define method to obtain data from a query in access user method getUser
+	data/UserDAO.php
