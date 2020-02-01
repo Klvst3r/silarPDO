@@ -41,5 +41,7 @@ Development Phases
 	help/helper.php
 3.2.5. Create Disconection of BD for the login
 	inc/Disconnect.php
-3.2.4. Define Controller of Access History
+3.2.6. Define Controller of Access History
 	controller/HistoryController.php	
+3.2.7. Define DAO if History 
+	data/HistoryDAO.php
