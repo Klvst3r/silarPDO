@@ -79,4 +79,15 @@ Development Phases
 	index.php
 3.3.3. Change to md5 encrupt field in User model.
 	model/User.phps
+
+
+------------------3. 4. Login validation for User registred -----------------
+3.4.1. Added libreries of validation JS
+	assets/css/overhang.css
+	assets/js/jquery.js
+	assets/js/jquery-ui.js	
+3.4.2. Create JS of response capture of login valitadion
+	assets/js/app.js
+3.4.3. Create new Connection for update history
+	inc/ConnectHisory.php
 	
