@@ -46,6 +46,15 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
 		//echo $idUser;
 		$idUserOnline = $user->getId_user();
 
+		//Update in User table the ID of the History of th last access
+		$history = HistoryController::updateHistory($idUser);
+
+
+		//After login, the status of user change to 1 in the field 'online' of user table
+		$online = UserController::changeIn($idUserOnline);
+
+
+
 	}
 
 }//isset user and pass
