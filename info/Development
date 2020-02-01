@@ -71,4 +71,12 @@ Development Phases
 	controller/UserController.php
 3.2.18. Call logout in validCode
 	inc/validCode.php
-		
+
+----------------- 3.3. User Validation	 ---------------------
+3.3.1. Create help of validation of user and pass of access
+	help/helper.php
+3.3.2. Change flag code = true from login and add CSS /Js nedded 
+	index.php
+3.3.3. Change to md5 encrupt field in User model.
+	model/User.phps
+	
