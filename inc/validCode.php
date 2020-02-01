@@ -73,6 +73,11 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
 			);
 
 
+		UserController::logout();
+
+		return print(json_encode($result));
+
+
 	}//UserController::login
 
   }//isset user and pass

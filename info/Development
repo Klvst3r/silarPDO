@@ -61,4 +61,14 @@ Development Phases
 	data/UserDAO.php
 3.2.13. Define User Sessions
 	inc/validCode.php
-	
+3.2.14. Call updateHistory method in the Controller
+	inc/ValidCode.php	
+3.2.15. Define Update History method in the controller
+	controller/HistoryController.php
+3.2.16. Define the DAO in updateHitory of the login in the DAO
+	data/HistoryDAO.php	
+3.2.17. Se define el metodo changeOut de UserController	
+	controller/UserController.php
+3.2.18. Call logout in validCode
+	inc/validCode.php
+		
