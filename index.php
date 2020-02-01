@@ -53,7 +53,7 @@ $cdb = $dConnect->dbConnectSimple();*/
     session_destroy();
     session_unset();
     ?>
-    <form class="form-signin" id="loginForm" action="inc/validaCode.php" method="POST" role="form">
+    <form class="form-signin" id="loginForm" action="inc/validCode.php" method="POST" role="form">
       <img class="mb-4" src="assets/img/favicons/favicon.ico" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Ingrese sus credenciales</h1>
       

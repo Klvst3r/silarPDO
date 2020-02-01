@@ -33,3 +33,9 @@ Development Phases
 ----------------- 3.2 Build Controller of User Login  --------------------------------	
 3.2.1. Create Controller of User with action (method) [login]
 	controller/UserController.php
+3.2.2. Create Method login in User Object
+	data/UserDAO.php	
+3.2.3. Initialize Validation of User and Pass to Recive data from login and validate it.	
+	inc/validaCode.php	
+3.2.4. Create helper to validate fields of forms
+	help/helper.php
