@@ -20,6 +20,6 @@ class UserController{
 		*/
 		return UserDAO::login($obj_user);
 		
-	}
+	}// login method
 
 }//Class UserController	
