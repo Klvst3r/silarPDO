@@ -22,3 +22,8 @@ Development Phases
 	index.php
 2.2. Vinculation labraries CSS, JS and Imag
 	/assets/css/*, /assets/js/*, /assets/img/*
+
+----------------- 3. Access BD  -----------------------------------
+----------------- 3.1 Data Access Objet  of User ----------------------------
+3.1.1. Create Data Model Access of BD Users with access login
+	model/User.php
