@@ -29,4 +29,7 @@ Development Phases
 		model/User.php
 3.1.2. Create Data Access Object DAO of User -> UserDAO, with the connection and disconnection to DB
 		data/UserDAO.php
-	
+
+----------------- 3.2 Build Controller of User Login  --------------------------------	
+3.2.1. Create Controller of User with action (method) [login]
+	controller/UserController.php
