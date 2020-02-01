@@ -53,11 +53,29 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
 		//After login, the status of user change to 1 in the field 'online' of user table
 		$online = UserController::changeIn($idUserOnline);
 
+		//Create Session variables
+				
+		$_SESSION["user"] = array (
+				"id_user"		=> $user->getId_user(),
+				"name"			=> $user->getName(),
+				"user"			=> $user->getUser_name(),
+				"email"			=> $user->getUser_email(),
+				"code"			=> $code,
+				"id_priv"		=> $user->getId_Priv(),
+				"op"      		=> "false"
+							);//$_SESSION
+
+		//  In the definition of session variable    =>       to use variable session 
+		//$_SESSION["user"] = array ("id_user" => $user->getId_user())  == $_SESSION["user"]["id_user"];
+
+		$result = array(
+			"status" => "true"
+			);
 
 
-	}
+	}//UserController::login
 
-}//isset user and pass
+  }//isset user and pass
 }//if $_SERVER
 $result = array("status" => "false");
 

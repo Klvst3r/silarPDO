@@ -59,5 +59,6 @@ Development Phases
 	controller/UserController
 3.2.12. Define shangeIn method in User DAO
 	data/UserDAO.php
-
+3.2.13. Define User Sessions
+	inc/validCode.php
 	
