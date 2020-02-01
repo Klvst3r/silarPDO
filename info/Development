@@ -11,3 +11,8 @@ Development Phases
 0.0. Design BD
 0.1. Create BD Entity - Relation
 0.2. Export structure and impor data in BD
+
+----------------- 1. Conexion a la BD ---------------------------------------
+1.1. Conexion con MySQL
+	inc/conn.php
+1.2. Conexion con mySQL - POO
