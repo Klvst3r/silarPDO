@@ -3,10 +3,10 @@
   <head>
  <?php session_start(); 
 
-include './inc/Connect.php';
+/*include './inc/Connect.php';
 $dConnect = new Connect;
 
-$cdb = $dConnect->dbConnectSimple();
+$cdb = $dConnect->dbConnectSimple();*/
 
   ?>
     <meta charset="utf-8">
