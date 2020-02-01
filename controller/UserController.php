@@ -22,4 +22,18 @@ class UserController{
 		
 	}// login method
 
+	public static function logout(){
+		
+		return UserDAO::logout();
+	}
+
+	public function getUser($user_name, $user_pass){
+		$obj_user = new User();
+
+		$obj_user->setUser_name($user_name);
+		$obj_user->setUser_pass($user_pass);
+
+		return UserDAO::getUser($obj_user);
+	}
+
 }//Class UserController	

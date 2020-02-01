@@ -49,3 +49,5 @@ Development Phases
 	model/History.php
 3.2.9. Call in validCode the register of Access History
 	inc/validaCode.php
+3.2.10. Define controlle to obtain data of last in the login
+	controler/UserController.php
