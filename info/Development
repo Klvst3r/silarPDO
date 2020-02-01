@@ -20,3 +20,5 @@ Development Phases
 --------------------------- 2. Login  --------------------------------------
 2.1 Create Front End of Login
 	index.php
+2.2. Vinculation labraries CSS, JS and Imag
+	/assets/css/*, /assets/js/*, /assets/img/*
