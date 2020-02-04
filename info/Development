@@ -94,5 +94,5 @@ Development Phases
 	inc/Disconnect.php	
 3.4.5. Create redirection to user menu 
 	view/logged_in.php	
-3.2.6. Create Exit User	
+3.4.6. Create Exit User	
 	view/sigout.php

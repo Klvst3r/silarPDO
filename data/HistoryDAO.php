@@ -7,7 +7,7 @@ class HistoryDAO extends ConnectHistory {
 	protected static $cnx;
 
 	private static function getConection(){
-			self::$cnx = Connect::conn();
+			self::$cnx = Connect::dbConnectSimple();
 		
 	}
 
