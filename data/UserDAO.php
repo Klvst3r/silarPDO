@@ -130,6 +130,30 @@ class UserDAO extends Connect {
 
 	}//Metodo ChangeIn	
 
+	public static function changeOut($user){
+
+		$idUser = $user->getId_user();
+
+		$updateOut = "UPDATE `users` SET `online` = '0' WHERE `users`.`id_user` = '$idUser'";
+
+		self::getConnection();
+
+		$result = self::$cnx->prepare($updateOut);
+
+		//$idUser = $user->getId_user();
+		//$result->bindParam(":id_user", $idUser);
+
+		if($result->execute()){
+			
+			self::disconnect();
+			
+			return true;
+		}else{
+			return false;
+		}
+
+	}//Metodo ChangeOut
+
 
 
 }//Class UserDAO
