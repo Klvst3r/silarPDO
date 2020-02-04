@@ -90,4 +90,9 @@ Development Phases
 	assets/js/app.js
 3.4.3. Create new Connection for update history
 	inc/ConnectHisory.php
-	
+3.4.4. Create Disconnect Class
+	inc/Disconnect.php	
+3.4.5. Create redirection to user menu 
+	view/logged_in.php	
+3.2.6. Create Exit User	
+	view/sigout.php
