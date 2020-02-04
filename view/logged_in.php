@@ -56,7 +56,7 @@ if(isset($_SESSION['user'])){
 					<?php
 					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=administrador.php'<head/>";
 					echo "SESSION_id: " . $_SESSION["user"]["id_priv"]; //Admin -> $id_priv ="1"
-					//header("location:../admin/"); 
+					header("location:../admin/"); 
 					
 
 				}/*if($_SESSION["user"]["id_priv"] > 1 && $_SESSION["user"]["id_priv"] < 9 ){

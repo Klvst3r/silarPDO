@@ -103,3 +103,8 @@ Development Phases
 	view/sigout.php
 	controller/userController.php
 	data/UserDAO.php
+
+------------------5. Dev Module -----------------	
+5.1. Create Dashboard
+	/dev/dashboard.html
+	
