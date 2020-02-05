@@ -1,0 +1,99 @@
+<!--
+=========================================================
+* Material Dashboard Dark Edition - v2.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard-dark
+* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+
+* Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html class="perfect-scrollbar-off" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>
+    SILAR Admin
+  </title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <!-- CSS Files -->
+  <link href="css/material-dashboard.css" rel="stylesheet">
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="dashboard_files/demo.css" rel="stylesheet">
+
+
+ <!--  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  
+  <!-- <link href="css/dashboard.css" rel="stylesheet"> -->
+  <!-- <script src="js/ie-emulation-modes-warning.js"></script>     -->
+  <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <!-- <link href="css/dashboard.css" rel="stylesheet"> -->
+  <script src="js/ie-emulation-modes-warning.js"></script> 
+
+
+
+<script type="text/javascript" charset="UTF-8" src="js/common.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/util.js"></script>
+
+<script type="text/javascript" charset="UTF-8" src="files/AuthenticationService.Authenticate"></script>
+
+<script>
+  
+        function new_User(){                 
+            
+            openUser('new', null, null, null);
+        }
+        
+        function openUser(action, id_user, name_user, user_name){    
+            document.formNewUser.id_user.value = id_user;
+            document.formNewUser.name_user.value = name_user;
+            document.formNewUser.user_name.value = user_name;
+            
+             
+            document.formNewUser.id_user.disabled = (action === 'see')?true:false;                
+            document.formNewUser.name_user.disabled = (action === 'see')?true:false; 
+            document.formNewUser.user_name.disabled = (action === 'see')?true:false; 
+            
+             
+            $('#myModal').on('shown.bs.modal', function () {
+                var modal = $(this);
+                if (action === 'new'){                            
+                    modal.find('.modal-title').text('Creación de idioma');  
+                    $('#save-language').show();
+                    $('#update-language').hide();                
+                }else if (action === 'edit'){
+                    modal.find('.modal-title').text('Actualizar idioma');
+                    $('#save-language').hide();                    
+                    $('#update-language').show();   
+                }else if (action === 'see'){
+                    modal.find('.modal-title').text('Ver Usuario');
+                    $('#save-language').hide();   
+                    $('#update-language').hide();   
+                }
+                $('#idlanguage').focus()
+             
+            });
+        }        
+         
+    </script>
+
+
+
+
+
+</head>
+
+<body class="dark-edition">
+  <div class="wrapper ">
