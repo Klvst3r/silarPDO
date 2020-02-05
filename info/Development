@@ -117,6 +117,26 @@ Development Phases
 		demo.css
 		font-awesome.css
 		now-ui-dashboard.css
-		
+5.4. Include JS and Plugn JS
+	/dev/js/
+		bootstrap.js
+		bootstrap.min.js
+		bootstrap-notify.js
+		buttons.js
+		chartjs.js
+		jquery.js
+		jquery.min.js
+		jquery-sharrre.js
+		js
+		now-ui-dashboard.js
+		now-ui-dashboard.min.js
+		popper.js
+		popper.min.js
+	/dev/js/pugins
+		bootstrap-notify.js
+		chartjs.min.js
+		perfect-scrollbar.jquery.js
+		perfect-scrollbar.jquery.min.js
+
 
 

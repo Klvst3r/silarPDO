@@ -75,7 +75,7 @@ if(isset($_SESSION['user'])){
 
 					echo "SESSION_id: " . $_SESSION["user"]["id_priv"];
 					//echo"<meta HTTP-EQUIV='Refresh' CONTENT='4; URL=../dev/'<head/>";
-					//header("location:../dev/"); //Dev -> $id_priv ="2"
+					header("location:../dev/"); //Dev -> $id_priv ="2"
 				}
 
 				?>
