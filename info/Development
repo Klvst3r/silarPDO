@@ -169,7 +169,7 @@ Development Phases
 	
 ------------------- Dev Module  -----------------	
 5.6. Split dashboard file
-	index.php
+	/dev/index.php
 	/dev/inc/
 		core-js.html
 		footer.html
@@ -179,3 +179,16 @@ Development Phases
 		sidebar.html
 
 ------------------- Admin Module  -----------------
+6.6. Split dash files Admin
+	/admin/index.php
+	/admin/inc/
+		head.html
+		sidebar.html
+		navbar.html
+		maincontent.php
+		core-js.html
+
+
+
+		
+
