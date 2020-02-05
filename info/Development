@@ -143,3 +143,5 @@ Development Phases
 ------------------6. Admin Module -----------------	
 6.1. Create Dashboard
 	/dev/dashboard.html
+6.2. Include Images
+	/dev/img/*		
