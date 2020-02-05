@@ -165,7 +165,8 @@ Development Phases
 		material-dashboard.js
 		popper.js
 		util.js
-
+6.5. Include Files .zip		
+	
 ------------------- Dev Module  -----------------	
 5.6. Split dashboard file
 	index.php
@@ -176,4 +177,5 @@ Development Phases
 		maincontent.html
 		navbar.html
 		sidebar.html
-				
+
+------------------- Admin Module  -----------------
