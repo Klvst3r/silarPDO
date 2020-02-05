@@ -147,3 +147,10 @@ Development Phases
 	/admin/img/*		
 6.3. Include CSS 	
 	/admin/css/
+		css.css
+		demo.css
+		font-awesome.css
+		materiales-dashboard.css
+6.4. Include JS
+	/admin/js/
+		
