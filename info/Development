@@ -137,6 +137,9 @@ Development Phases
 		chartjs.min.js
 		perfect-scrollbar.jquery.js
 		perfect-scrollbar.jquery.min.js
+5.5. Add Source Template Files
+	dev/files/Template.zip
 
-
-
+------------------6. Admin Module -----------------	
+6.1. Create Dashboard
+	/dev/dashboard.html
