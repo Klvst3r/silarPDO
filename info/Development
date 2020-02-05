@@ -166,4 +166,14 @@ Development Phases
 		popper.js
 		util.js
 
-------------------6. Admin Module -----------------	
+------------------- Dev Module  -----------------	
+5.6. Split dashboard file
+	index.php
+	/dev/inc/
+		core-js.html
+		footer.html
+		head.html
+		maincontent.html
+		navbar.html
+		sidebar.html
+				
