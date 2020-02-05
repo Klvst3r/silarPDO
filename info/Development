@@ -144,4 +144,6 @@ Development Phases
 6.1. Create Dashboard
 	/dev/dashboard.html
 6.2. Include Images
-	/dev/img/*		
+	/admin/img/*		
+6.3. Include CSS 	
+	/admin/css/
