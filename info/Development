@@ -188,7 +188,11 @@ Development Phases
 		maincontent.php
 		core-js.html
 
-
+------------------- Admin Module  -----------------
+6.7. Include BD fixed
+	/assets/BD/1. BD Login/
+		silar.sql
+		
 
 		
 
