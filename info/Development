@@ -137,7 +137,33 @@ Development Phases
 		chartjs.min.js
 		perfect-scrollbar.jquery.js
 		perfect-scrollbar.jquery.min.js
+5.5. Add Source Template Files
+	dev/files/Template.zip
 
-
+------------------6. Admin Module -----------------	
+6.1. Create Dashboard
+	/dev/dashboard.html
+6.2. Include Images
+	/admin/img/*		
+6.3. Include CSS 	
+	/admin/css/
+		css.css
+		demo.css
+		font-awesome.css
+		materiales-dashboard.css
+6.4. Include JS
+	/admin/js/
+		bootstrap-material-design.js
+		bootstrap-notify.js
+		buttons.js
+		chartist.js
+		common.js
+		default-passive-events.js
+		demo.js
+		jquery.js
+		js
+		material-dashboard.js
+		popper.js
+		util.js
 
 ------------------6. Admin Module -----------------	
