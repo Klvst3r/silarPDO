@@ -50,16 +50,34 @@
 <script type="text/javascript" charset="UTF-8" src="files/AuthenticationService.Authenticate"></script>
 
 <script>
-  
+        /**
+         * Abrimos la ventana modal para crear un nuevo elemento.
+         * We open a modal window to create a new element.
+         * @returns {undefined}
+         */
+        /*function newCbLanguage(){                 */
         function new_User(){                 
-            
+            /*openCbLanguage('new', null, null, null, null, null, null, null);*/
             openUser('new', null, null, null);
         }
-        
-        function openUser(action, id_user, name_user, user_name){    
+        /**
+         * Abrimos la ventana modal teniendo en cuenta la acción (action) para 
+         * utilizarla como creación (Create), lectura (Read) o actualización (Update).
+         * We opened the modal window considering the action (action) to use 
+         * as creation (Create), reading (Read) or upgrade (Update).
+         * @param {type} action las acciones que utilizamos son : new para Create, see para Read y edit para Update.
+         *      Actions we use are :  new for Create, see for Read and edit for Update.
+         * @param {type} id_user
+         * @param {type} name
+         * @param {type} user_name
+         * @returns {undefined}
+         */
+        function openUser(action, id_user, name_user, user_name, id_priv, id_status_user){    
             document.formNewUser.id_user.value = id_user;
             document.formNewUser.name_user.value = name_user;
             document.formNewUser.user_name.value = user_name;
+            document.formNewUser.id_priv.value = id_priv;
+            document.formNewUser.id_status_user.value = id_status_user;
             
              
             document.formNewUser.id_user.disabled = (action === 'see')?true:false;                
@@ -78,7 +96,7 @@
                     $('#save-language').hide();                    
                     $('#update-language').show();   
                 }else if (action === 'see'){
-                    modal.find('.modal-title').text('Ver Usuario');
+                    modal.find('.modal-title').text('Detalle del Usuario');
                     $('#save-language').hide();   
                     $('#update-language').hide();   
                 }
