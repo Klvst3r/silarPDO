@@ -192,7 +192,22 @@ Development Phases
 6.7. Include BD fixed
 	/assets/BD/1. BD Login/
 		silar.sql
-		
 
-		
+
+------------------- 7. Modal Module  -----------------
+7.1. Fix material dashboard CSS
+	admin/css/material-dashboard.css
+7.2.  Include Js in File for call modal
+	admin/inc/core-js.html
+7.3. Include Script to fill fields in modal
+	admin/inc/head.html
+7.4. Create Modal File
+	admin/modal.html
+7.5. Call modal
+	admin/inc/maincontent.php
+7.6. Create getTableUsers method in UserController
+	controller/UserController.php
+7.7. Create getTableUsers method in DAO User
+	data/UserDAO.php
+			
 
