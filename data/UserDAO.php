@@ -154,6 +154,110 @@ class UserDAO extends Connect {
 
 	}//Metodo ChangeOut
 
+	public static function getTableUsers($action){
+		$query = "SELECT id_user, name as name_user, user_name, id_priv, id_status_user FROM users;";
+
+		self::getConnection();
+
+		
+
+		$result = self::$cnx->prepare($query);
+
+		$result->execute();
+
+		
+		$rows = $result->rowCount();
+		$cols = $result->columnCount();
+		
+
+		if($result->rowCount() > 0){
+
+		?>
+		<div class="table-responsive">
+		<table class="table table-striped"> 
+		<thead>   
+
+		        <!-- <tr>
+		            <th>ID</th>
+		            <th>NAME</th>
+		            <th>USERNAME</th>
+		            <th style="text-align:center;">ACCIONES</th>
+		        </tr>            -->
+<!------------------------   Table Head Begins ------------------------->
+		       <?php
+		       echo '  
+		       <tr>';
+
+			foreach(range(0, $result->columnCount() - 2) as $column_index){
+				$meta[] = $result->getColumnMeta($column_index);
+			}
+
+			for ($i=0; $i < $cols - 2; $i++){
+				echo '<th style="text-align:center;">' . $meta[$i]["name"] . '</td>';	
+			}       		
+			echo '<th style="text-align:center;">Acción</th>';
+
+			echo '</tr>
+
+		       ';
+
+
+		       ?>
+<!------------------------   Table Head Ends ------------------------->		       
+		<thead>   
+		<tbody>  
+			<form role="form" name="formUser" method="post" action="index.php"> 
+		<?php
+		echo '<br />';
+        for($filas = 0; $filas < $rows; $filas++){
+        	$data = $result->fetch();
+            ?>
+            <tr>
+                <td style="text-align:center;"><?php echo $data['id_user']; ?></td>
+                <td style="text-align:center;"><?php echo $data['name_user']; ?></td>
+                <td style="text-align:center;"><?php echo $data['user_name']; ?></td>
+                <!-- <td>Boton Ver</td> -->
+				<td style="text-align:center;">
+                <button id="see-user" name="see-user" type="button" class="btn btn-primary"
+        				data-toggle="modal"
+        				data-target="#myModal"
+        				onclick="openUser('see', 
+                    '<?php echo $data['id_user']; ?>', 
+                    '<?php echo $data['name_user']; ?>',
+                    '<?php echo $data['user_name']; ?>',
+                    '<?php echo $data['id_priv']; ?>',
+                    '<?php echo $data['id_status_user']; ?>')">
+    			Ver</button>
+				</td>
+
+            </tr>    
+		<?php
+        	}
+        ?>
+       </form>        
+</tbody>      
+</table>
+
+
+</div>         
+
+<?php		
+    
+
+return true;
+
+		}else{
+
+			echo 'Tabla vacia: ' . $exception;
+			return false;
+		}
+
+
+
+
+
+	}//getTableUsers method
+
 
 
 }//Class UserDAO
