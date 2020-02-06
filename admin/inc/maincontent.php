@@ -104,7 +104,7 @@
 
 <?php
 
-
+include 'modal.html';
 //$query = "SELECT id_user as ID, name, user_name FROM users";
 $params = "";
 
@@ -113,7 +113,7 @@ UserController::getTableUsers($params);
 
 
 //modal
-include 'modalGeneral.php';
+//include 'modalGeneral.php';
 
 
 
