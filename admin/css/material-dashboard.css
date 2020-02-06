@@ -650,7 +650,8 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
+  margin: 0.75em;
 }
 
 button {
@@ -5779,6 +5780,7 @@ button.close {
   display: flex;
   flex-direction: column;
   width: 80%;
+  /*width: 870px;*/
   pointer-events: auto;
   background-color: #ffffff;
   background-clip: padding-box;
@@ -5878,7 +5880,7 @@ button.close {
 @media (min-width: 992px) {
   .modal-lg {
     /*max-width: 800px;*/
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
@@ -13282,11 +13284,13 @@ fieldset[disabled][disabled] .has-rose .form-control,
 .bmd-form-group .form-control,
 .bmd-form-group label,
 .bmd-form-group input::placeholder {
-  line-height: 1.1;
+  /*line-height: 2.5;*/
+  line-height: 1.0;
 }
 
 .bmd-form-group label {
-  color: #AAAAAA;
+  /*color: #AAAAAA;*/
+  color: #7b1fa2;
 }
 
 .bmd-form-group .radio label,
@@ -13510,7 +13514,8 @@ fieldset[disabled][disabled] .has-rose .form-control,
 .form-control,
 label,
 input::placeholder {
-  line-height: 1.1;
+  /*line-height: 1.1;*/
+  line-height: .5;
 }
 
 label {
@@ -20551,7 +20556,9 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .card .card-body {
-  color: #8b92a9;
+  /*color: #8b92a9;*/
+  color: #7b1fa2;
+
 }
 
 .dark-edition .card .card-body .card-category+.card-title {
