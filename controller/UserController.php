@@ -54,4 +54,13 @@ class UserController{
 
 	}//changeOut
 
+	//Listar Usuarios
+	public function getTableUsers($user){
+		$obj_user = new User();
+
+		$obj_user->setId_user($user);
+
+		return UserDAO::getTableUsers($obj_user);
+	}
+
 }//Class UserController	
