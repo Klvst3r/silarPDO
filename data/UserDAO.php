@@ -155,7 +155,10 @@ class UserDAO extends Connect {
 	}//Metodo ChangeOut
 
 	public static function getTableUsers($action){
-		$query = "SELECT id_user, name as name_user, user_name, id_priv, id_status_user FROM users;";
+		$query = "SELECT A.id_user as ID, A.name AS Nombre, A.user_name, B.privelege, C.desc_status_user,  
+				 A.user_tel AS Telefono, A.user_email AS Email, A.user_position AS Puesto 
+				FROM users A, priveleges B, status_user C 
+				WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user;";
 
 		self::getConnection();
 
@@ -188,11 +191,11 @@ class UserDAO extends Connect {
 		       echo '  
 		       <tr>';
 
-			foreach(range(0, $result->columnCount() - 2) as $column_index){
+			foreach(range(0, $result->columnCount() - 6) as $column_index){
 				$meta[] = $result->getColumnMeta($column_index);
 			}
 
-			for ($i=0; $i < $cols - 2; $i++){
+			for ($i=0; $i < $cols - 6; $i++){
 				echo '<th style="text-align:center;">' . $meta[$i]["name"] . '</td>';	
 			}       		
 			echo '<th style="text-align:center;">Acción</th>';
@@ -213,20 +216,24 @@ class UserDAO extends Connect {
         	$data = $result->fetch();
             ?>
             <tr>
-                <td style="text-align:center;"><?php echo $data['id_user']; ?></td>
-                <td style="text-align:center;"><?php echo $data['name_user']; ?></td>
-                <td style="text-align:center;"><?php echo $data['user_name']; ?></td>
+                <td style="text-align:center;"><?php echo $data['ID']; ?></td>
+                <td style="text-align:center;"><?php echo $data['Nombre']; ?></td>
+
                 <!-- <td>Boton Ver</td> -->
 				<td style="text-align:center;">
                 <button id="see-user" name="see-user" type="button" class="btn btn-primary"
         				data-toggle="modal"
         				data-target="#myModal"
         				onclick="openUser('see', 
-                    '<?php echo $data['id_user']; ?>', 
-                    '<?php echo $data['name_user']; ?>',
+                    '<?php echo $data['ID']; ?>', 
+                    '<?php echo $data['Nombre']; ?>',
                     '<?php echo $data['user_name']; ?>',
-                    '<?php echo $data['id_priv']; ?>',
-                    '<?php echo $data['id_status_user']; ?>')">
+                    '<?php echo $data['privelege']; ?>',
+                    '<?php echo $data['desc_status_user']; ?>',
+                    '<?php echo $data['Telefono']; ?>',
+                    '<?php echo $data['Email']; ?>',
+                    '<?php echo $data['Puesto']; ?>'
+                    )">
     			Ver</button>
 				</td>
 
