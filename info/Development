@@ -209,5 +209,9 @@ Development Phases
 	controller/UserController.php
 7.7. Create getTableUsers method in DAO User
 	data/UserDAO.php
-			
-
+7.8. Complete SQL query and Add field in JS openUser function			
+	data/UserDAO.php
+7.9. Add fields for Js openUser function
+	admin/inc/head.html
+7.10. Add fields in Modal Form
+	admin/modal.html	
