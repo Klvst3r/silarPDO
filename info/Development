@@ -215,3 +215,31 @@ Development Phases
 	admin/inc/head.html
 7.10. Add fields in Modal Form
 	admin/modal.html	
+
+
+------------------- 8. Reg Module  -----------------
+8.1 Add options in switch
+	/admin/op.php
+8.2. Modify menu in sidebar
+	admin/inc/sidebar.html
+8.3. Create view User Reg Form
+	admin/view/formRegUser.php
+8.4. Create include reg Content
+	admin/inc/regContent.php
+
+-----------------------------------------------------
+
+8.5. Change Styles of Material Dashboard
+	admin/css/materials-dashboard.css
+
+8.6.Apply security of session in views
+	admin/index.php
+	admin/view/formRegUser.php
+-----------------------------------------------------
+
+8.7. Create Class Form
+	data/Form.php
+8.8. Create class for Combos
+	sql/SQL.php
+	sql/Combo.php
+		
