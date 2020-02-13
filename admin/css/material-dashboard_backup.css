@@ -1373,7 +1373,6 @@ pre code {
   .col-sm-12 {
     flex: 0 0 100%;
     max-width: 100%;
-
   }
 
   .order-sm-first {
@@ -2354,7 +2353,6 @@ pre code {
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
-
 }
 
 .form-control:disabled,
@@ -2363,10 +2361,8 @@ pre code {
   opacity: 1;
 }
 
-/*Cambio para form select*/
 select.form-control:not([size]):not([multiple]) {
   height: calc(2.4375rem + 2px);
-  height: 30px;
 }
 
 select.form-control:focus::-ms-value {
@@ -11868,7 +11864,6 @@ form {
   margin-bottom: 0;
 }
 
-/*Cambio en form-control para select*/
 .form-control {
   background: no-repeat center bottom, center calc(100% - 1px);
   background-size: 0 100%, 100% 100%;
@@ -11879,7 +11874,6 @@ form {
   padding-right: 0;
   border-radius: 0;
   font-size: 14px;
-  background-color: white;
 }
 
 .form-control:focus,
@@ -11887,8 +11881,6 @@ form {
   background-size: 100% 100%, 100% 100%;
   transition-duration: 0.3s;
   box-shadow: none;
-  /*Se agrega color de fondo onfocus*/
-  background-color: #E7CACA;
 }
 
 .form-control::-moz-placeholder {
@@ -13519,16 +13511,11 @@ fieldset[disabled][disabled] .has-rose .form-control,
   background-size: 100% 100%, 100% 100%, 1.1875rem 1.1875rem;
 }
 
-
-/*Cambios en Formulario*/
 .form-control,
 label,
 input::placeholder {
   /*line-height: 1.1;*/
-  /*line-height: .5; /*Esta era la recomendada*/
-  /*line-height: 0;*/
-  /*Se cambio esta linea*/
-
+  line-height: .5;
 }
 
 label {
@@ -14068,9 +14055,6 @@ fieldset[disabled] .form-group .form-control {
   padding-top: 25px !important;
 }
 
-
-/*Cmbios en los alert*/
-
 .alert {
   border: 0;
   border-radius: 3px;
@@ -14218,7 +14202,6 @@ fieldset[disabled] .form-group .form-control {
   color: #00bcd4;
 }
 
-/*Cambio enla smbra del alrt*/
 .alert.alert-primary {
   box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(204, 204, 204, 0.3);
 }
@@ -14283,13 +14266,13 @@ fieldset[disabled] .form-group .form-control {
 }
 
 .page-header {
- /* min-height: 100vh;
+  min-height: 100vh;
   max-height: 1000px;
   display: flex !important;
   height: 100%;
   padding: 0;
   color: #fff;
-  position: relative;*/
+  position: relative;
 }
 
 .page-header .page-header-image {
@@ -17168,8 +17151,6 @@ label {
   color: #55acee;
 }
 
-
-/* Cambio en card*/
 .card {
   border: 0;
   margin-bottom: 30px;
@@ -17504,8 +17485,6 @@ label {
   display: inline-flex;
 }
 
-/*Cambios en Card*/
-
 .card {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
@@ -17653,8 +17632,6 @@ label {
   top: 3px;
   font-size: 16px;
 }
-
-/*Cambio encabezado Card*/
 
 .card [class*="card-header-"] {
   margin: 0px 15px 0;
@@ -20578,24 +20555,19 @@ Copyright (c) 2015 Daniel Eden
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* cambio color de texto en card*/
 .dark-edition .card .card-body {
   /*color: #8b92a9;*/
-  color: #8b92a9;
+  color: #7b1fa2;
 
 }
 
 .dark-edition .card .card-body .card-category+.card-title {
   color: #fff;
-  
 }
-
-/*Cambio en el titulo de la tarjeta*/
 
 .dark-edition .card .card-body .card-category,
 .dark-edition .card .card-body .card-title {
-  color: #ffffff;
-  /*color: #8b92a9;*/
+  color: #8b92a9;
 }
 
 .dark-edition .card .card-body .card-description {
@@ -20809,9 +20781,8 @@ Copyright (c) 2015 Daniel Eden
   color: #a9afbbd1;
 }
 
-/* Cambio en el color de fuente en lable*/
 .dark-edition .form-group label {
-  color:#ffffff;
+  color: #a9afbbd1;
 }
 
 .dark-edition [class^='bmd-label'],
