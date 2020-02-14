@@ -1,4 +1,6 @@
 <?php
+//session_start();
+
 if(isset($_SESSION['user'])){
 
 	require "inc/head.html";
@@ -14,7 +16,7 @@ if(isset($_SESSION['user'])){
 	?>
 	      <!-- End Navbar -->
 	<?php
-	require "inc/regContent.php";
+	require "content/regContent.php";
 	?>   
 	</div>
 
@@ -26,7 +28,6 @@ if(isset($_SESSION['user'])){
 }else{
   echo '<script>location.href = "../index.php"</script>';
 }
-
 
 ?>      
 
