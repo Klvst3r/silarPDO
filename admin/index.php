@@ -19,7 +19,7 @@ if(isset($_SESSION['user'])){
 	?>
 	      <!-- End Navbar -->
 	<?php
-	require "inc/maincontent.php";
+	require "content/maincontent.php";
 	?>   
 	</div>
 
