@@ -242,4 +242,12 @@ Development Phases
 8.8. Create class for Combos
 	sql/SQL.php
 	sql/Combo.php
-		
+8.9. Create regUser method in User Controller
+	controler/UserController.php
+8.10. Create reguser method in User Object
+	data/UserDao.php
+
+8.11. Create Page 404
+	admin/view/error404.php
+	admin/content/*
+	

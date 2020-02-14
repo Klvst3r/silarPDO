@@ -103,8 +103,8 @@
 
 
 <?php
+include 'inc/modal.html';
 
-include 'modal.html';
 //$query = "SELECT id_user as ID, name, user_name FROM users";
 $params = "";
 

@@ -7,7 +7,7 @@ class Form {
     accept-charset='$accept_charset'>";
 	}*/
 
-  function form($name, $method, $action, $charset){
+  function Form($name, $method, $action, $charset){
     echo '<form name="'.$name.'" method="'.$method.'" action="'.$action.'" accept-charset="'.$charset.'">';
   }
 
