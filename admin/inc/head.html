@@ -50,28 +50,12 @@
 <script type="text/javascript" charset="UTF-8" src="files/AuthenticationService.Authenticate"></script>
 
 <script>
-        /**
-         * Abrimos la ventana modal para crear un nuevo elemento.
-         * We open a modal window to create a new element.
-         * @returns {undefined}
-         */
-        /*function newCbLanguage(){                 */
+  
         function new_User(){                 
-            /*openCbLanguage('new', null, null, null, null, null, null, null);*/
+            
             openUser('new', null, null, null, null, null, null, null, null);
         }
-        /**
-         * Abrimos la ventana modal teniendo en cuenta la acción (action) para 
-         * utilizarla como creación (Create), lectura (Read) o actualización (Update).
-         * We opened the modal window considering the action (action) to use 
-         * as creation (Create), reading (Read) or upgrade (Update).
-         * @param {type} action las acciones que utilizamos son : new para Create, see para Read y edit para Update.
-         *      Actions we use are :  new for Create, see for Read and edit for Update.
-         * @param {type} id_user
-         * @param {type} name
-         * @param {type} user_name
-         * @returns {undefined}
-         */
+        
         function openUser(action, id_user, name_user, user_name, id_priv, id_status_user, user_tel, user_email, user_position){    
             document.formNewUser.id_user.value = id_user;
             document.formNewUser.name_user.value = name_user;
@@ -81,8 +65,8 @@
             document.formNewUser.user_tel.value = user_tel;
             document.formNewUser.user_email.value = user_email;
             document.formNewUser.user_position.value = user_position;
-            
-             
+
+
             document.formNewUser.id_user.disabled = (action === 'see')?true:false;                
             document.formNewUser.name_user.disabled = (action === 'see')?true:false; 
             document.formNewUser.user_name.disabled = (action === 'see')?true:false; 
@@ -90,9 +74,8 @@
             document.formNewUser.id_status_user.disabled = (action === 'see')?true:false; 
             document.formNewUser.user_tel.disabled = (action === 'see')?true:false; 
             document.formNewUser.user_email.disabled = (action === 'see')?true:false; 
-            document.formNewUser.user_position.disabled = (action === 'see')?true:false; 
-            
-             
+            document.formNewUser.user_position.disabled = (action === 'see')?true:false;             
+
             $('#myModal').on('shown.bs.modal', function () {
                 var modal = $(this);
                 if (action === 'new'){                            
