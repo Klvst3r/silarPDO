@@ -63,4 +63,21 @@ class UserController{
 		return UserDAO::getTableUsers($obj_user);
 	}
 
+	//Registrar usuario
+	public function regUser($id_priv, $id_status_user, $name, $user_name, $user_pass, $user_tel, $user_email, $user_position){
+		$obj_user = new User();
+
+		$obj_user->setId_priv($id_priv);
+		$obj_user->setId_status_user($id_status_user);
+		$obj_user->setName($name);
+		$obj_user->setUser_name($user_name);
+		$obj_user->setUser_pass($user_pass);
+		$obj_user->setUser_tel($user_tel);
+		$obj_user->setUser_email($user_email);
+		$obj_user->setUser_position($user_position);
+
+		return UserDAO::regUser($obj_user);
+
+	}//regUser method
+
 }//Class UserController	
