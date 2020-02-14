@@ -260,10 +260,107 @@ return true;
 		}
 
 
+ }//getTableUsers method
+
+
+	public static function regUser($user){
+
+		/*echo $user->getId_priv();
+		echo "</br>";
+		echo $user->getId_status_user();
+		echo "</br>";
+		echo $user->getName();
+		echo "</br>";
+		echo $user->getUser_name();
+		echo "</br>";
+		echo $user->getUser_pass();
+		echo "</br>";
+		echo $user->getUser_tel();
+		echo "</br>";
+		echo $user->getUser_email();
+		echo "</br>";
+		echo $user->getUser_position();*/
+
+
+		/*$id_priv 			= $user->getId_priv();	
+		$id_status_user 	= $user->getId_status_user();
+		$id_history			= 0;
+		$name 				= $user->getName();	
+		$user_name 			= $user->getUser_name();	
+		$user_pass 			= $user->getUser_pass();	
+		$user_tel 			= $user->getUser_tel();	
+		$user_email 		= $user->getUser_email();	
+		$user_position 		= $user->getUser_position();
+		$online				= 0;*/
+
+
+		/*$query = "INSERT INTO `users` (`id_user`, `id_priv`, `id_status_user`, `id_history`, `name`, `user_name`, `user_pass`, `user_tel`, `user_email`, `user_position`, `online`) VALUES (NULL, '$id_priv', '$id_status_user', '$id_history', '$name', '$user_name', '$user_pass', '$user_tel', '$user_email', '$user_position', '$online');";*/
+
+
+		$query = "INSERT INTO `users` (`id_user`, `id_priv`, `id_status_user`, `id_history`, `name`, `user_name`, `user_pass`, `user_tel`, `user_email`, `user_position`, `online`) 
+		VALUES (NULL, :id_priv, :id_status_user, :id_history, :name, :user_name, :user_pass, :user_tel, :user_email, :user_position, :online);";
 
 
 
-	}//getTableUsers method
+		self::getConnection();
+
+		$result = self::$cnx->prepare($query);
+
+
+		$id_priv 			= $user->getId_priv();	
+		$result->bindParam(":id_priv", $id_priv);
+
+		$id_status_user 	= $user->getId_status_user();
+		$result->bindParam(":id_status_user", $id_status_user);
+
+		$id_history			= 0;
+		$result->bindParam(":id_history", $id_history);
+
+		$name 				= $user->getName();	
+		$result->bindParam(":name", $name);
+
+		$user_name 			= $user->getUser_name();	
+		$result->bindParam(":user_name", $user_name);
+
+		$user_pass 			= $user->getUser_pass();	
+		$result->bindParam(":user_pass", $user_pass);
+
+		$user_tel 			= $user->getUser_tel();	
+		$result->bindParam(":user_tel", $user_tel);
+
+		$user_email 		= $user->getUser_email();	
+		$result->bindParam(":user_email", $user_email);
+
+		$user_position 		= $user->getUser_position();
+		$result->bindParam(":user_position", $user_position);
+
+		$online 			= '0';
+		$result->bindParam(":online", $online);
+
+		
+		if($result->execute()){
+
+			echo '<div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                      <b> Listo - </b> Se registro la información correctamente...
+                  </div>';
+
+    
+    		echo"<meta HTTP-EQUIV='Refresh' CONTENT='2; URL=index.php'<head/>";
+
+			
+			self::disconnect();
+			
+			return true;
+		}else{
+			return false;
+		}
+
+
+ } //regUser method 
 
 
 
