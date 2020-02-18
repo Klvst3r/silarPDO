@@ -1,0 +1,51 @@
+Modelo Vista controlador
+http://www.edsonmm.com/modelo-vista-controlador-php/
+https://victorroblesweb.es/2013/11/18/tutorial-mvc-en-php-nativo/
+
+Evitar Inyeccion de SQL
+https://es.stackoverflow.com/questions/18232/c%C3%B3mo-evitar-la-inyecci%C3%B3n-sql-en-php
+
+Bootstrap
+https://getbootstrap.com/
+
+Un generador de getter y setters de PHP lo utilizaremos con:
+http://mikeangstadt.name/projects/getter-setter-gen/
+
+Libreria jQuery OverHang para desplegar notificaciones instantaneas
+http://paulkr.github.io/overhang.js/
+https://paulkr.com/
+
+Probelamas con Js (Uncaught ReferenceError: $ is not defined)
+https://javarevisited.blogspot.com/2016/04/3-ways-to-solve-jquery-uncaught-reference-error-is-not-defined.html
+
+jQuery
+https://jquery.com/
+
+jQuery UI  User Interfaz
+https://jqueryui.com/
+
+
+Cerrar Conexiones con MySQL
+https://www.php.net/manual/es/function.mysql-close.php
+
+Comandos de seguimiento GIT
+https://git-scm.com/book/es/v2/Appendix-B%3A-Comandos-de-Git-Seguimiento-B%C3%A1sico
+https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+
+
+Rastreando Cambios en GIT
+https://swcarpentry.github.io/git-novice-es/04-changes/
+https://vabadus.es/blog/otros/trabajando-con-git-fichero-en-el-historico-de-cambios
+https://www.galisteocantero.com/git-diff-ver-los-cambios-realizador-en-un-archivo/
+
+Repositorio SILAR
+https://github.com/Angel-HP/silar
+
+
+Colors in template CSS
+-----------------------------
+https://htmlcolorcodes.com/es/
+
+https://developer.mozilla.org/es/docs/Web/CSS/CSS_Colors/Herramienta_para_seleccionar_color
+
+https://www.mclibre.org/consultar/htmlcss/css/css-color.html
