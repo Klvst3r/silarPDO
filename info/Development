@@ -247,7 +247,55 @@ Development Phases
 8.10. Create reguser method in User Object
 	data/UserDao.php
 
-8.11. Create Page 404
+
+------------------- 9. Error Page  -----------------
+
+9.11 Create Page 404
 	admin/view/error404.php
-	admin/content/*
-	
+	admin/content/content404.php
+
+------------------- 10. Edit User  -----------------
+10.1. Add Options in menu for edition
+	admin/op.php
+
+10.2. Modify options in sidebar
+	admin/inc/sidebar.html
+
+10.3. Modify List User in Index Admin
+	admin/inc/sidebar.html	
+
+10.4. Create List User Edition
+	admin/content/listEditUser.php
+	admin/view/listEditUser.php
+
+10.5. Create User edit Form
+	admin/view/formEditUser.php
+	admin/content/editContent.php
+
+10.6. Update User data
+	admin/view/editUser.php
+	admin/content/processEdit.php
+
+
+------------------11. Forms Tools --------------------
+11.1. Create Reconection
+	inc/Recconect.php
+
+11.1.1. Secure data in Process Reg
+	admin/content/processReg.php
+
+11.2. Update Materials CSS
+	admin/css/material-dashboard.css
+
+11.3. Create Combo File
+	sql/Combo.php
+
+11.4. Get table user for edit and get user data method in Controller
+	controller/UserController.php
+
+11.5. Add new fiels in User Model
+	model/User.php
+
+11.6. Update objects for User edition
+	data/UserDAO.php
+
