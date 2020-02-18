@@ -22,7 +22,7 @@
 <div class="card-body">
 	<div class="row">
 	<div class="">
-		<h4 class="card-title">Datos del Usuario</h4>
+		<h4 class="card-title">Registrando Información</h4>
 	</div>
 </div>
 	<br/>
@@ -32,8 +32,9 @@
 
 if(isset($_POST['save'])){
 
-  if (isset($_POST['id_priv']) and isset($_POST['id_status_user']) and isset($_POST['name']) and isset( $_POST['user_name']) and isset($_POST['user_pass']) and isset($_POST['user_tel']) and isset($_POST['user_email']) and isset($_POST['user_position']) ) {
+  if (isset($_POST['id_user']) and isset($_POST['id_priv']) and isset($_POST['id_status_user']) and isset($_POST['name']) and isset( $_POST['user_name']) and isset($_POST['user_pass']) and isset($_POST['user_tel']) and isset($_POST['user_email']) and isset($_POST['user_position']) ) {
 
+    $id_user          = validate_field($_POST['id_user']);
     $id_priv          = validate_field($_POST['id_priv']);
     $id_status_user   = validate_field($_POST['id_status_user']);
     $name             = validate_field($_POST['name']);
