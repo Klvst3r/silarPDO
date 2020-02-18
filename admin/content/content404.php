@@ -45,7 +45,7 @@
         <b> Alerta - </b> Será regirigido al "Indice"</span>
     </div>
 
-      <meta HTTP-EQUIV='Refresh' CONTENT='3; URL=index.php'<head/>
+      <meta HTTP-EQUIV='Refresh' CONTENT='5; URL=index.php'<head/>
 <!--   ---------------------- Ends Notification ---------------------   -->
 
   <!--   ---------------------- Ends Content 404 ---------------------   -->
