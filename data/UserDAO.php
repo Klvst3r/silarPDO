@@ -158,7 +158,7 @@ class UserDAO extends Connect {
 		$query = "SELECT A.id_user as ID, A.name AS Nombre, A.user_name, B.privelege, C.desc_status_user,  
 				 A.user_tel AS Telefono, A.user_email AS Email, A.user_position AS Puesto 
 				FROM users A, priveleges B, status_user C 
-				WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user;";
+				WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user ORDER BY ID ASC;";
 
 		self::getConnection();
 
@@ -221,7 +221,7 @@ class UserDAO extends Connect {
 
                 <!-- <td>Boton Ver</td> -->
 				<td style="text-align:center;">
-                <button id="see-user" name="see-user" type="button" class="btn btn-primary"
+                <button id="see-user" name="see-user" type="button" class="btn btn-primary btn-sm"
         				data-toggle="modal"
         				data-target="#myModal"
         				onclick="openUser('see', 
@@ -361,6 +361,189 @@ return true;
 
 
  } //regUser method 
+
+
+	public static function getTableUsersEdit($action){
+
+	/*$query = "SELECT id_user AS ID, name as Nombre, user_name as Usuario, id_priv, id_status_user FROM users;";*/
+	$query = "SELECT A.id_user AS ID, A.name as Nombre, A.user_name as Usuario, B.privelege, C.desc_status_user, A.user_tel AS Telefono, A.user_email AS Email, A.user_position AS Puesto 
+		FROM users A, priveleges B, status_user C 
+		WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user ORDER BY ID ASC;";
+
+	self::getConnection();
+
+	$result = self::$cnx->prepare($query);
+
+	$result->execute();
+
+	$rows = $result->rowCount();
+	$cols = $result->columnCount();
+
+	if($result->rowCount() > 0){
+
+	?>
+	<div class="table-responsive">
+	<table class="table table-striped"> 
+	<thead>   
+
+<!------------------------   Table Head Begins ------------------------->
+<?php
+	echo '  
+	<tr>';
+
+	foreach(range(0, $result->columnCount() - 2) as $column_index){
+		$meta[] = $result->getColumnMeta($column_index);
+	}
+
+	for ($i=0; $i < $cols - 6; $i++){
+		echo '<th style="text-align:center;">' . $meta[$i]["name"] . '</td>';	
+	}       		
+		echo '<th style="text-align:center;">Acción</th>';
+
+	echo '</tr>
+
+	';
+
+?>
+<!------------------------   Table Head Ends ------------------------->		       
+	<thead>   
+	<tbody>  
+		<form role="form" name="formUser" method="post" action="index.php"> 
+	<?php
+	echo '<br />';
+    for($filas = 0; $filas < $rows; $filas++){
+    	$data = $result->fetch();
+        ?>
+        <tr>
+            <td style="text-align:center;"><?php echo $data['ID']; ?></td>
+            <td style="text-align:center;"><?php echo $data['Nombre']; ?></td>
+            
+            <!-- <td>Boton Editar</td> -->
+		<?php
+
+		$edit = '<a class="btn btn-warning btn-sm" href="op.php?id=12&u='. $data['ID'] .'">Editar</a>';
+
+		?>
+			<td style="text-align:center;">
+
+		<?php
+
+		echo $edit;
+
+		?>
+
+			</td>
+
+        </tr>    
+	<?php
+    	}
+    ?>
+   </form>        
+</tbody>      
+</table>
+
+
+</div>         
+
+<?php		
+
+return true;
+
+	}else{
+
+		echo 'Tabla vacia: ' . $exception;
+		return false;
+	}
+
+
+}//getTableUsers method
+
+public function getUserData($user){
+
+	/*$id_user = $user->getId_user();
+	echo "ID: " . $id_user;
+		echo "</br>";*/
+
+	$query = "SELECT A.id_priv, B.privelege, A.id_status_user, C.desc_status_user, A.name, A.user_name, A.user_tel, A.user_email, A.user_position 
+	FROM users A, priveleges B, status_user C 
+	WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user AND A.id_user = :id_user";
+	
+	self::getConnection();
+
+	$result = self::$cnx->prepare($query);
+
+	$id_user 			= $user->getId_user();	
+	$result->bindParam(":id_user", $id_user);
+
+	//Execution
+	$result->execute();
+
+	$data = $result->fetch();
+
+	$user = new User();
+	//We send the information through its properties
+	//In this way we will already have loaded in the new object in the instance of the entity
+	$user->setId_priv($data["id_priv"]);
+	$user->setPrivelege($data["privelege"]);
+	$user->setId_status_user($data["id_status_user"]);
+	$user->setDesc_status_user($data["desc_status_user"]);
+	$user->setName($data["name"]);
+	$user->setUser_name($data["user_name"]);
+	$user->setUser_tel($data["user_tel"]);
+	$user->setUser_email($data["user_email"]);
+	$user->setUser_position($data["user_position"]);
+
+
+	self::disconnect();
+
+	
+	//Return the entity
+	return $user;
+
+	}///getDoc method
+
+	public static function updateUser($user){
+
+		$update = "UPDATE `users` SET `id_priv` = :id_priv, `id_status_user` = :id_status_user, `name` = :name, `user_name` = :user_name, `user_tel` = :user_tel, `user_email` = :user_email, `user_position` = :user_position WHERE `users`.`id_user` = :id_user;";
+
+		self::getConnection();
+
+		$result = self::$cnx->prepare($update);
+
+		$id_user 			= $user->getId_user();	
+		$result->bindParam(":id_user", $id_user);
+
+		$id_priv 			= $user->getId_priv();
+		$result->bindParam(":id_priv", $id_priv);
+
+		$id_status_user 	= $user->getId_status_user();
+		$result->bindParam(":id_status_user", $id_status_user);
+
+		$name 				= $user->getName();
+		$result->bindParam(":name", $name);
+
+		$user_name 			= $user->getUser_name();
+		$result->bindParam(":user_name", $user_name);
+
+		$user_tel 			= $user->getUser_tel();
+		$result->bindParam(":user_tel", $user_tel);
+
+		$user_email 	 	= $user->getUser_email();
+		$result->bindParam(":user_email", $user_email);
+		
+		$user_position 		= $user->getUser_position();
+		$result->bindParam(":user_position", $user_position);
+
+		if($result->execute()){
+			//return true;
+			//echo "Insercion Exitosa";
+			self::disconnect();
+			return true;
+		}
+
+		return false;
+	
+	}//updateUser method
 
 
 
