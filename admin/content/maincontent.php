@@ -5,12 +5,20 @@
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Listado</h4>
+              <h4 class="card-title">Listado General</h4>
               <p class="card-category">Usuarios</p>
             </div>
             <div class="card-body">
 
 
+
+<div class="card-body">
+  <div class="row">
+  <div class="">
+    <h4 class="card-title">Usuarios Registrados</h4>
+  </div>
+</div>
+  
 
 
 
