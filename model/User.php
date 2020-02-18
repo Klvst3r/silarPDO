@@ -7,7 +7,11 @@ Para generar y establecer el modelo de La BD
 Class User {
 	private $id_user;
 	private $id_priv;
+	private $privelege;
+
 	private $id_status_user;
+	private $desc_status_user;
+
 	private $id_history;
 	private $name;
 	private $user_name; 
@@ -33,12 +37,28 @@ Class User {
 		$this->id_priv = $id_priv;
 	}
 
+	public function getPrivelege(){
+		return $this->privelege;
+	}
+
+	public function setPrivelege($privelege){
+		$this->privelege = $privelege;
+	}
+
 	public function getId_status_user(){
 		return $this->id_status_user;
 	}
 
 	public function setId_status_user($id_status_user){
 		$this->id_status_user = $id_status_user;
+	}
+
+	public function getDesc_status_user(){
+		return $this->desc_status_user;
+	}
+
+	public function setDesc_status_user($desc_status_user){
+		$this->desc_status_user = $desc_status_user;
 	}
 
 	public function getId_history(){
