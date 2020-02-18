@@ -11875,7 +11875,8 @@ form {
   border: 0;
   height: 36px;
   transition: background 0s ease-out;
-  padding-left: 0;
+  padding-left: 20px;
+  /*padding-left: 0;*/
   padding-right: 0;
   border-radius: 0;
   font-size: 14px;
@@ -20789,7 +20790,8 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .dark-edition .form-control {
-  color: #6c6c6c;
+  /*color: #6c6c6c;*/
+  color : #000000;
 }
 
 .dark-edition .form-control::-moz-placeholder {
