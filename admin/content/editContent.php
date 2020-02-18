@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title">Registro</h4>
+        <h4 class="card-title">Edición</h4>
         <p class="card-category">Usuarios</p>
       </div>
 <div class="card-body">
@@ -23,7 +23,7 @@ include '../sql/Combo.php';
 <div class="card-body">
 	<div class="row">
 	<div class="">
-		<h4 class="card-title">Ingrese los datos de registro</h4>
+		<h4 class="card-title">Actualice la información del usuario</h4>
 	</div>
 </div>
 	<br/>
@@ -31,7 +31,21 @@ include '../sql/Combo.php';
 <!--   	<form name="regContent_submit" method="POST" action="action.php?id=3" accept-charset="utf-8"> -->
 <?php
 
-$form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
+if(isset($_GET['u'])){
+
+$form = new Form('regContent_submit','POST','op.php?id=13','utf-8');
+
+
+$id_user = $_GET['u'];
+
+
+$form -> addField(4, array(
+           "field_name"    =>  "id_user",
+           "value"   =>  $id_user
+           ));
+
+$user = UserController::getUserData($id_user);
+
 
 ?>
   
@@ -41,13 +55,19 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
     <div class="alert alert-primary">
 
 <?php
-    /*---   Privilegio ---*/         
-     $query = "SELECT id_priv, privelege from priveleges order by id_priv";
-     $combo = new combo($query,"id_priv","id_priv", "", "Privilegio","required","","","1");
+    /*---   Privilegio ---*/  
+     $position = $user->getId_priv();
+     $desc_position = $user->getPrivelege();
+     $val_position = $position . " - " . $desc_position; 
+     $query = "SELECT id_priv, privelege FROM priveleges EXCEPT WHERE id_priv <> '$position' ORDER BY id_priv";
+     $combo = new combo($query,"id_priv","id_priv", $val_position, "Privilegio","required","","","1");
 
      /*---   Estatus ---*/         
-     $query = "SELECT id_status_user, desc_status_user from status_user order by id_status_user";
-     $combo = new combo($query,"id_status_user","id_status_user", "", "Estado","required","","","1");
+     $status = $user->getId_status_user();
+     $desc_status = $user->getDesc_status_user();
+     $val_status = $status . " - " . $desc_status;
+     $query = "SELECT id_status_user, desc_status_user FROM status_user EXCEPT WHERE id_status_user <> '$status' ORDER BY id_status_user";
+     $combo = new combo($query,"id_status_user","id_status_user", $val_status, "Estado","required","","","1");
 
      /*---   Nombre ---*/         
      $form -> addField(1, array(
@@ -58,7 +78,7 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
       "input_class"   =>  "col-md-12",
       "readonly"      =>  "",
       "disabled"      =>  "",
-      "value"         =>  "",
+      "value"         =>  $user->getName(),
       "maxlength"     =>  "",
       "size"          =>  "",
       "style"         =>  "",
@@ -77,14 +97,14 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
       "input_class"   =>  "col-md-12",
       "readonly"      =>  "",
       "disabled"      =>  "",
-      "value"         =>  "",
+      "value"         =>  $user->getUser_name(),
       "maxlength"     =>  "",
       "size"          =>  "",
       "style"         =>  "",
       "js"            =>  "",
       "placeholder"   =>  "Nombre de Usuario",
       "required"      =>  "required",
-      "autofocus"     =>  "autofocus"
+      "autofocus"     =>  ""
       ));
               
 ?>
@@ -105,7 +125,7 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
         "div_field"     =>  "",
         "input_class"   =>  "col-md-12",
         "readonly"      =>  "",
-        "disabled"      =>  "",
+        "disabled"      =>  "disabled",
         "value"         =>  "",
         "maxlength"     =>  "",
         "size"          =>  "",
@@ -125,7 +145,7 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
     "input_class"   =>  "col-md-12",
     "readonly"      =>  "",
     "disabled"      =>  "",
-    "value"         =>  "",
+    "value"         =>  $user->getUser_tel(),
     "maxlength"     =>  "10",
     "size"          =>  "10",
     "style"         =>  "",
@@ -144,7 +164,7 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
       "input_class"   =>  "col-md-12",
       "readonly"      =>  "",
       "disabled"      =>  "",
-      "value"         =>  "",
+      "value"         =>  $user->getUser_email(),
       "maxlength"     =>  "",
       "size"          =>  "",
       "style"         =>  "",
@@ -163,7 +183,7 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
       "input_class"   =>  "col-md-12",
       "readonly"      =>  "",
       "disabled"      =>  "",
-      "value"         =>  "",
+      "value"         =>  $user->getUser_position(),
       "maxlength"     =>  "",
       "size"          =>  "",
       "style"         =>  "",
@@ -188,12 +208,12 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
 <?php
 
     $form -> addField(3, array(
-      "name"           =>  "save",
+      "name"           =>  "update",
       "type_button"    =>  "btn btn-primary",
       "tooltip"        =>  "Registrar",
       "icon"           =>  "fa fa-save",
       "disabled"       =>  "",
-      "legend"         =>  "Registrar Información"
+      "legend"         =>  "Actualizar Información"
      ));
 
 
@@ -205,6 +225,22 @@ $form = new Form('regContent_submit','POST','op.php?id=3','utf-8');
 <?php
 
 $form->closeForm();
+}//isset($_GET['u'])
+else{
+
+
+      echo '<div class="alert alert-alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <i class="material-icons">close</i>
+                    </button>
+                    <span>
+                      <b> Advertencia - </b> No hay información para actualizar...
+                  </div>';
+
+    
+        echo"<meta HTTP-EQUIV='Refresh' CONTENT='3; URL=index.php'<head/>";
+
+}
 
 ?>
 
