@@ -456,7 +456,7 @@ return true;
 	}
 
 
-}//getTableUsers method
+}//getTableUsersEdit method
 
 public function getUserData($user){
 
@@ -544,6 +544,105 @@ public function getUserData($user){
 		return false;
 	
 	}//updateUser method
+
+	public static function getTableUsersDel($action){
+
+	/*$query = "SELECT id_user AS ID, name as Nombre, user_name as Usuario, id_priv, id_status_user FROM users;";*/
+	$query = "SELECT A.id_user AS ID, A.name as Nombre, A.user_name as Usuario, B.privelege, C.desc_status_user, A.user_tel AS Telefono, A.user_email AS Email, A.user_position AS Puesto 
+		FROM users A, priveleges B, status_user C 
+		WHERE A.id_priv = B.id_priv AND A.id_status_user = C.id_status_user ORDER BY ID ASC;";
+
+	self::getConnection();
+
+	$result = self::$cnx->prepare($query);
+
+	$result->execute();
+
+	$rows = $result->rowCount();
+	$cols = $result->columnCount();
+
+	if($result->rowCount() > 0){
+
+	?>
+	<div class="table-responsive">
+	<table class="table table-striped"> 
+	<thead>   
+
+<!------------------------   Table Head Begins ------------------------->
+<?php
+	echo '  
+	<tr>';
+
+	foreach(range(0, $result->columnCount() - 2) as $column_index){
+		$meta[] = $result->getColumnMeta($column_index);
+	}
+
+	for ($i=0; $i < $cols - 6; $i++){
+		echo '<th style="text-align:center;">' . $meta[$i]["name"] . '</td>';	
+	}       		
+		echo '<th style="text-align:center;">Acción</th>';
+
+	echo '</tr>
+
+	';
+
+?>
+<!------------------------   Table Head Ends ------------------------->		       
+	<thead>   
+	<tbody>  
+		<form role="form" name="formUser" method="post" action="index.php"> 
+	<?php
+	echo '<br />';
+    for($filas = 0; $filas < $rows; $filas++){
+    	$data = $result->fetch();
+
+    	$id = $data['ID'];
+        ?>
+        <tr>
+            <td style="text-align:center;"><?php echo $data['ID']; ?></td>
+            <td style="text-align:center;"><?php echo $data['Nombre']; ?></td>
+            
+            <!-- <td>Boton Editar</td> -->
+		<?php
+
+		//$delete = '<a class="btn btn-danger btn-sm" href="op.php?id=22&u='. $data['ID'] .'">Eliminar</a>';
+		//$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'op.php?id=22&u='. $data['ID'] .'\')">Eliminar</button>';
+		$delete = '<button class="btn btn-danger btn-sm" onclick="confirmar(\'action.php?a=21&b=' . $id . '\')">Eliminar</button>';
+
+		?>
+			<td style="text-align:center;">
+
+		<?php
+
+		echo $delete;
+
+		?>
+
+			</td>
+
+        </tr>    
+	<?php
+    	}
+    ?>
+   </form>        
+</tbody>      
+</table>
+
+
+</div>         
+
+<?php		
+
+return true;
+
+	}else{
+
+		echo 'Tabla vacia: ' . $exception;
+		return false;
+	}
+
+
+}//getTableUsers method
 
 
 

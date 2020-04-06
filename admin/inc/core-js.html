@@ -1,4 +1,7 @@
   <script src="js/jquery.js"></script>
+  <!-- confirm -->
+  <script src="js/jquery-confirm.min.js"></script>
+
   <script src="js/popper.js"></script>
   <script src="js/bootstrap-material-design.js"></script>
   <script src="js/default-passive-events.js"></script>
@@ -214,3 +217,26 @@
 
     });
   </script>
+
+  <script type="text/javascript">
+                        $('.confirmar').on('click',function(){
+                            $.confirm({
+                              
+
+                              confirmButtonClass: 'btn-success',
+                  
+                  cancelButtonClass: 'btn-danger',
+
+                                title: 'Delete user?',
+                                content: 'This dialog will automatically trigger \'cancel\' in 5 seconds if you don\'t respond.',
+                                autoClose: 'cancel|5000',
+                                confirm: function(){
+                                    alert('confrimed');
+                                },
+                                cancel:function(){
+                                    alert('cancelled');
+                                }
+                            });
+                        });
+                        
+                        </script>

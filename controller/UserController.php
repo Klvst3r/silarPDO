@@ -118,6 +118,16 @@ class UserController{
 		return UserDAO::updateUser($obj_user);
 
 	}//regUser method
+
+	//User Listo for delete
+	public function getTableUsersDel($user){
+		$obj_user = new User();
+
+		$obj_user->setId_user($user);
+
+		return UserDAO::getTableUsersDel($obj_user);
+	
+	}//getTableUsersEdit method
 	
 
 }//Class UserController	

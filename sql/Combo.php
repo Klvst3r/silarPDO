@@ -1,6 +1,6 @@
 <?php
 
-include '../inc/Reconnect.php';
+include '../inc/Connect.php';
 
 include '../sql/SQL.php';
 

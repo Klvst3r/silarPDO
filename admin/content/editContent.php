@@ -60,6 +60,7 @@ $user = UserController::getUserData($id_user);
      $desc_position = $user->getPrivelege();
      $val_position = $position . " - " . $desc_position; 
      $query = "SELECT id_priv, privelege FROM priveleges EXCEPT WHERE id_priv <> '$position' ORDER BY id_priv";
+     
      $combo = new combo($query,"id_priv","id_priv", $val_position, "Privilegio","required","","","1");
 
      /*---   Estatus ---*/         

@@ -35,8 +35,12 @@ if(isset($id)){
 			require_once("view/editUser.php");
 			break;
 		case 21:
-			//Eliminar Usuiarios
-			require_once("view/deleteUser.php");
+			//Listar Usuiarios a eliminar
+			require_once("view/listDelUser.php");
+			break;
+		case 22:
+			//Formulario para Eliminar Usuiarios
+			require_once("view/delUser.php");
 			break;
 		case 31:
 			//Cambiar Pass
